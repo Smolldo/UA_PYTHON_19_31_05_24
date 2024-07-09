@@ -142,3 +142,74 @@ students = [
 
 for name in students:
     name[0] == 'Andriy'
+
+
+# Завдання теми 6
+
+goods =[
+    "хліб",
+    "молоко",
+    "яйця",
+    "яблука",
+    "картопля",
+    "сир",
+    "куряче м'ясо",
+    "рис",
+    "паста",
+    "помідори"
+]
+
+new_goods = []
+
+solds = []
+
+# Показ усіх наявних товарів (виведення елементів списку),
+print('Список товарів: ')
+iterator = 1
+for i in goods:
+    print(f'{iterator}. {i}')
+    iterator += 1
+
+# Постачання нових товарів (додавання елементів, об’єднання списків),
+print('Додавання нових товарів: ')
+print('Напишіть назву нового товару або 0 для виходу')
+
+while True:
+    product = input('> ')
+
+    if product == '0':
+        break
+    else:
+        new_goods.append(product)
+goods.extend(new_goods)
+print(goods)
+
+# Продаж товарів (пошук елемента списку і видалення його),
+print('Що купуємо?')
+
+while True:
+    print('Товари в наявностфі', goods)
+    product = input('> ')
+
+    if product == '0':
+        print('Дякуємо за покупки)))))')
+        break
+    else:
+        if product in goods:
+            goods.remove(product)
+            solds.append(product)
+            print(f'Товар {product} куплено. Залишилося в наявності: {goods.count(product)}')
+        else:
+            print('Товару нема. бери шось інкше')
+
+# Заміна проданих продуктів на нові (вставка елемента),
+prindex = goods.index('сир')  
+goods.insert(prindex, 'творожок')
+
+# Виведення списку проданих продуктів за день,
+# Показати історію продажів (виведення списку в зворотному порядку).
+print('продані товари за день: ')
+solds.reverse()
+
+for i in solds:
+    print(f'- {i}')
