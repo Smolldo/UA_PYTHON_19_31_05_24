@@ -159,3 +159,11 @@ print(tup1[-1])
 
 print(tup1.index(2))
 print(tup1.count('sdfsdf'))
+
+lll = 'Lorem ipsum dolores'
+
+cls = lll.replace(' ', '')
+
+sc = Counter(cls)
+top3 = sc.most_common(3)
+print(top3)
