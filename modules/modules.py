@@ -100,7 +100,7 @@ import numpy as np
 
 # Створити графік функції sin(x) за допомогою бібліотеки matplotlib.
 
-x = np.linspace(-2 * np.pi, 2 * np.pi, 100)
+x = np.linspace(-10,10, 100)
 y = np.sin(x)
 
 
